@@ -20,17 +20,17 @@ namespace WPF2Lab
     /// </summary>
     public partial class Page1 : Page
     {
-        
+
         public Page1()
         {
-            
+
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ((MainWindow)Application.Current.MainWindow).Content = new Page2();
-            
+
         }
     }
 }

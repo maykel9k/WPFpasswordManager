@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <TreeView x:Name="Tree" MouseRightButtonUp="TreeView_MouseRightButtonUp" SelectedItemChanged="Tree_SelectedItemChanged">
-                
+
             </TreeView>
             <Image Grid.Column="1" Stretch="Fill" Visibility="Hidden" x:Name="TopSecretImage" 
                     Source="Resources/TopSecret.png"/>

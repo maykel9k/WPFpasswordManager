@@ -21,11 +21,11 @@ namespace WPF2Lab
     public partial class Page2 : Page
     {
 
-        int d = 1,p = 1,i = 1;
+        int d = 1, p = 1, i = 1;
 
         public Page2()
         {
-            
+
             InitializeComponent();
         }
 
@@ -55,7 +55,7 @@ namespace WPF2Lab
         private void Tree_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             string elem = Tree.SelectedItem.ToString();
-            if(elem.Contains("Directory"))
+            if (elem.Contains("Directory"))
             {
 
             }
@@ -65,7 +65,7 @@ namespace WPF2Lab
             }
             if (elem.Contains("Password"))
             {
-                
+
             }
         }
 
