@@ -25,7 +25,6 @@ namespace WPF2Lab
 
         public Page2()
         {
-
             InitializeComponent();
         }
 
