@@ -35,8 +35,9 @@
             <TreeView x:Name="Tree" MouseRightButtonUp="TreeView_MouseRightButtonUp" SelectedItemChanged="Tree_SelectedItemChanged">
 
             </TreeView>
-            <Image Grid.Column="1" Stretch="Fill" Visibility="Hidden" x:Name="TopSecretImage" 
-                    Source="Resources/TopSecret.png"/>
+            <Frame Grid.Column="1" x:Name="Page2Frame" NavigationUIVisibility="Hidden"/>
+            <!--<Image Grid.Column="1" Stretch="Fill" Visibility="Hidden" x:Name="TopSecretImage" 
+                    Source="Resources/TopSecret.png"/>-->
         </Grid>
     </DockPanel>
 </Page>

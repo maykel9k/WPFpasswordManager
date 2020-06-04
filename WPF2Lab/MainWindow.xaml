@@ -8,6 +8,5 @@
         Title="Password Manager" Height="600" Width="1200" WindowStartupLocation="CenterScreen" MinHeight="300" MinWidth="600">
     <Grid>
         <Frame x:Name="Main" Source="Page1.xaml"/>
-
     </Grid>
 </Window>

@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace WPF2Lab
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Page2pass.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page2pass : Page
     {
-
-        public Page1()
+        public Page2pass()
         {
-
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow).Content = new Page2();
         }
     }
 }

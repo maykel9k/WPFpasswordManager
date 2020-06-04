@@ -56,15 +56,15 @@ namespace WPF2Lab
             string elem = Tree.SelectedItem.ToString();
             if (elem.Contains("Directory"))
             {
-
+                Page2Frame.NavigationService.Navigate(new Uri("Page2dir.xaml", UriKind.Relative));
             }
             if (elem.Contains("Image"))
             {
-                TopSecretImage.Visibility = Visibility.Visible;
+                Page2Frame.NavigationService.Navigate(new Uri("Page2img.xaml", UriKind.Relative));
             }
             if (elem.Contains("Password"))
             {
-
+                Page2Frame.NavigationService.Navigate(new Uri("Page2pass.xaml", UriKind.Relative));
             }
         }
 
