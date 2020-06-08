@@ -16,13 +16,13 @@ using System.Xml;
 
 namespace WPF2Lab
 {
+
     /// <summary>
     /// Interaction logic for Page2.xaml
     /// </summary>
     public partial class Page2 : Page
     {
-
-        int d = 1,p = 1,i = 1;
+        int d = 1, p = 1, i = 1;
 
         public string currdir { get; set; }
         TreeViewItem currit;
@@ -31,8 +31,10 @@ namespace WPF2Lab
 
         public Page2()
         {
-            
             InitializeComponent();
+
+            //DEBUG
+            Page2Frame.NavigationService.Navigate(new Uri("Page2pass.xaml", UriKind.Relative));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -94,17 +96,17 @@ namespace WPF2Lab
         private void Tree_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             string elem = Tree.SelectedItem.ToString();
-            if(elem.Contains("Directory"))
+            if (elem.Contains("Directory"))
             {
-
+                Page2Frame.NavigationService.Navigate(new Uri("Page2dir.xaml", UriKind.Relative));
             }
             if (elem.Contains("Image"))
             {
-                TopSecretImage.Visibility = Visibility.Visible;
+                Page2Frame.NavigationService.Navigate(new Uri("Page2img.xaml", UriKind.Relative));
             }
             if (elem.Contains("Password"))
             {
-                
+                Page2Frame.NavigationService.Navigate(new Uri("Page2pass.xaml", UriKind.Relative));
             }
         }
 
