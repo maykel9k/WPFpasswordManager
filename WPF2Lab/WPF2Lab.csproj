@@ -103,6 +103,7 @@
     <Compile Include="Page2pass.xaml.cs">
       <DependentUpon>Page2pass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PasswordStrength.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

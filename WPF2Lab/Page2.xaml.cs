@@ -15,17 +15,20 @@ using System.Windows.Shapes;
 
 namespace WPF2Lab
 {
+
     /// <summary>
     /// Interaction logic for Page2.xaml
     /// </summary>
     public partial class Page2 : Page
     {
-
         int d = 1, p = 1, i = 1;
 
         public Page2()
         {
             InitializeComponent();
+
+            //DEBUG
+            Page2Frame.NavigationService.Navigate(new Uri("Page2pass.xaml", UriKind.Relative));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
