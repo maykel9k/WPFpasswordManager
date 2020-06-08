@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace WPF2Lab
 {
@@ -22,6 +23,11 @@ namespace WPF2Lab
     {
 
         int d = 1,p = 1,i = 1;
+
+        public string currdir { get; set; }
+        TreeViewItem currit;
+        
+        
 
         public Page2()
         {
@@ -36,10 +42,43 @@ namespace WPF2Lab
 
         private void TreeView_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ContextMenu crm = this.FindResource("crmButton") as ContextMenu;
-            crm.PlacementTarget = sender as TreeView;
-            crm.IsOpen = true;
 
+            DependencyObject obj = e.OriginalSource as DependencyObject;
+            TreeViewItem item = GetDependencyObjectFromVisualTree(obj, typeof(TreeViewItem)) as TreeViewItem;
+            currit = item;
+            try
+            {
+                string header = (string)item.Header;
+                if (header.Contains("Directory"))
+                {
+
+                    ContextMenu crm = this.FindResource("crmDir") as ContextMenu;
+                    crm.PlacementTarget = sender as TreeViewItem;
+                    currdir = header;
+                    crm.IsOpen = true;
+                    
+
+                }
+            }
+           catch(NullReferenceException excep)
+            {
+                ContextMenu crm = this.FindResource("crmButton") as ContextMenu;
+                crm.PlacementTarget = sender as TreeView;
+                crm.IsOpen = true;
+            }
+
+        }
+
+        private static DependencyObject GetDependencyObjectFromVisualTree(DependencyObject startObject, Type type)
+        {
+            var parent = startObject;
+            while (parent != null)
+            {
+                if (type.IsInstanceOfType(parent))
+                    break;
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+            return parent;
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
@@ -75,21 +114,35 @@ namespace WPF2Lab
             TreeViewItem treeItem = null;
             treeItem = new TreeViewItem();
             treeItem.Header = dir;
-            treeItem.MouseRightButtonUp += treeItem_MouseRightButtonUp;
+            treeItem.FontWeight = FontWeights.Bold;
+            //treeItem.MouseRightButtonUp += treeItem_MouseRightButtonUp;
             Tree.Items.Add(treeItem);
             d++;
         }
 
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
+            string dir = $"New Directory {d}";
+            TreeViewItem treeItem = null;
+            treeItem = new TreeViewItem();
+            treeItem.Header = dir;
+            //treeItem.MouseRightButtonUp += treeItem_MouseRightButtonUp;
+            currit.Items.Add(treeItem);
+            d++;
+        }
 
+        private void Page_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            
         }
 
         private void treeItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
+            /*
             ContextMenu crm = this.FindResource("crmDir") as ContextMenu;
             crm.PlacementTarget = sender as TreeViewItem;
             crm.IsOpen = true;
+            */
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
