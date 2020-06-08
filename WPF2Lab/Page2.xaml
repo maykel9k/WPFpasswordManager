@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:WPF2Lab"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Page2">
+      Title="Page2" ContextMenuOpening="Page_ContextMenuOpening">
     <Page.Resources>
-        <ContextMenu x:Key="crmButton">
+         <ContextMenu x:Key="crmButton">
             <MenuItem Header="Add Directory" Click="MenuItem_Click_1"/>
             <MenuItem Header="Add File">
                 <MenuItem Header="Passwords" Click="MenuItem_Click_2"/>
@@ -16,7 +16,8 @@
             </MenuItem>
         </ContextMenu>
         <ContextMenu x:Key="crmDir">
-            <MenuItem x:Name="nodir" Header="somting" IsEnabled="False"/>
+            <MenuItem Header="New Directory"  IsEnabled="False"/>
+            <Separator/>
             <MenuItem Header="Add Directory" Click="MenuItem_Click_4"/>
         </ContextMenu>
     </Page.Resources>
